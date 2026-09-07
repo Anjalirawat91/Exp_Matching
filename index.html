@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Regular Expression Matcher</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Regular Expression Matcher</h1>
+        <p>Match strings using the <strong>+</strong> operator</p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Problem Description -->
+        <section class="card">
+            <h2>About the Problem</h2>
+
+            <p>
+                Given an input string and a pattern, check whether the
+                pattern matches the entire input string.
+            </p>
+
+            <p>
+                The <strong>+</strong> operator means one or more
+                occurrences of the preceding character.
+            </p>
+
+            <div class="example">
+                <strong>Example:</strong>
+
+                <br>
+
+                String: <code>AAAB</code>
+
+                <br>
+
+                Pattern: <code>A+B</code>
+
+                <br>
+
+                Result: <strong>True</strong>
+            </div>
+        </section>
+
+
+        <!-- Input Section -->
+        <section class="card">
+
+            <h2>Test Your Pattern</h2>
+
+            <div class="input-box">
+
+                <label for="inputString">
+                    Input String
+                </label>
+
+                <input
+                    type="text"
+                    id="inputString"
+                    placeholder="Enter uppercase letters"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label for="pattern">
+                    Pattern
+                </label>
+
+                <input
+                    type="text"
+                    id="pattern"
+                    placeholder="Example: A+B"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div class="button-group">
+
+                <button id="matchBtn">
+                    Check Match
+                </button>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Result Section -->
+        <section class="result-card">
+
+            <h2>Result</h2>
+
+            <div id="result">
+                Enter a string and pattern to check.
+            </div>
+
+        </section>
+
+
+        <!-- Pattern Explanation -->
+        <section class="card">
+
+            <h2>Supported Pattern</h2>
+
+            <div class="rule">
+
+                <span class="symbol">+</span>
+
+                <div>
+                    <strong>One or more occurrences</strong>
+
+                    <p>
+                        The plus symbol means that the character before
+                        it must appear at least once.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="examples">
+
+                <div>
+                    <code>A+</code>
+                    <span>→ A, AA, AAA...</span>
+                </div>
+
+                <div>
+                    <code>A+B</code>
+                    <span>→ AB, AAB, AAAB...</span>
+                </div>
+
+                <div>
+                    <code>AB+</code>
+                    <span>→ AB, ABB, ABBB...</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Algorithm Section -->
+        <section class="card">
+
+            <h2>How It Works</h2>
+
+            <ol>
+
+                <li>
+                    Read the input string and pattern.
+                </li>
+
+                <li>
+                    Check whether the pattern has valid syntax.
+                </li>
+
+                <li>
+                    Process each character of the pattern.
+                </li>
+
+                <li>
+                    If <strong>+</strong> is present, match one or more
+                    occurrences of the previous character.
+                </li>
+
+                <li>
+                    Check whether the complete input string is matched.
+                </li>
+
+                <li>
+                    Return True or False.
+                </li>
+
+            </ol>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Regular Expression Matcher | HTML, CSS & JavaScript
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
