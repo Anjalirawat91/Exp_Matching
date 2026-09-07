@@ -1,0 +1,288 @@
+/* =========================
+   General
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+header {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   Container
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+
+/* =========================
+   Cards
+========================= */
+
+.card,
+.result-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card h2,
+.result-card h2 {
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   Description
+========================= */
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.example {
+    background: #f3f4f6;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 4px solid #2563eb;
+    line-height: 1.8;
+}
+
+code {
+    background: #e5e7eb;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+}
+
+
+/* =========================
+   Input
+========================= */
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    outline: none;
+}
+
+.input-box input:focus {
+    border-color: #2563eb;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.clear-btn {
+    background: #6b7280;
+}
+
+
+/* =========================
+   Result
+========================= */
+
+.result-card {
+    text-align: center;
+}
+
+#result {
+    padding: 25px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.success {
+    color: #15803d;
+}
+
+.failure {
+    color: #dc2626;
+}
+
+.invalid {
+    color: #d97706;
+}
+
+
+/* =========================
+   Pattern Rules
+========================= */
+
+.rule {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f9fafb;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.symbol {
+    width: 50px;
+    height: 50px;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.examples {
+    display: grid;
+    gap: 10px;
+}
+
+.examples div {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: #f3f4f6;
+    border-radius: 6px;
+}
+
+.examples span {
+    color: #555;
+}
+
+
+/* =========================
+   Algorithm
+========================= */
+
+ol {
+    padding-left: 25px;
+}
+
+ol li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .examples div {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
