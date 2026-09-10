@@ -1,7 +1,3 @@
-// =========================
-// Get HTML Elements
-// =========================
-
 const inputString = document.getElementById("inputString");
 const pattern = document.getElementById("pattern");
 
@@ -11,23 +7,11 @@ const clearBtn = document.getElementById("clearBtn");
 const result = document.getElementById("result");
 
 
-// =========================
-// Match Button
-// =========================
-
 matchBtn.addEventListener("click", checkMatch);
 
 
-// =========================
-// Clear Button
-// =========================
-
 clearBtn.addEventListener("click", clearFields);
 
-
-// =========================
-// Main Function
-// =========================
 
 function checkMatch() {
 
@@ -35,7 +19,6 @@ function checkMatch() {
     const pat = pattern.value;
 
 
-    // Check empty input
     if (text === "" || pat === "") {
 
         result.className = "invalid";
@@ -47,7 +30,6 @@ function checkMatch() {
     }
 
 
-    // Check uppercase English letters
     if (!/^[A-Z]+$/.test(text)) {
 
         result.className = "invalid";
@@ -59,7 +41,6 @@ function checkMatch() {
     }
 
 
-    // Check pattern syntax
     if (!isValidPattern(pat)) {
 
         result.className = "invalid";
@@ -71,22 +52,18 @@ function checkMatch() {
     }
 
 
-    // Start timer
     const startTime = performance.now();
 
 
-    // Perform matching
     const isMatch = matchPattern(text, pat);
 
 
-    // End timer
     const endTime = performance.now();
 
     const timeTaken =
         (endTime - startTime).toFixed(2);
 
 
-    // Display result
     if (isMatch) {
 
         result.className = "success";
@@ -106,26 +83,16 @@ function checkMatch() {
 }
 
 
-// =========================
-// Validate Pattern
-// =========================
-
 function isValidPattern(pat) {
 
-    // Pattern must contain only
-    // uppercase letters and +
     if (!/^[A-Z+]+$/.test(pat)) {
         return false;
     }
 
-
-    // Pattern cannot start with +
     if (pat[0] === "+") {
         return false;
     }
 
-
-    // Pattern cannot contain ++
     if (pat.includes("++")) {
         return false;
     }
@@ -134,10 +101,6 @@ function isValidPattern(pat) {
     return true;
 }
 
-
-// =========================
-// Pattern Matching
-// =========================
 
 function matchPattern(text, pat) {
 
@@ -150,7 +113,6 @@ function matchPattern(text, pat) {
         const currentChar = pat[patternIndex];
 
 
-        // Normal character
         if (
             patternIndex + 1 >= pat.length ||
             pat[patternIndex + 1] !== "+"
@@ -169,11 +131,7 @@ function matchPattern(text, pat) {
         }
 
 
-        // Character followed by +
         else {
-
-            // The character must appear
-            // at least once
             if (
                 textIndex >= text.length ||
                 text[textIndex] !== currentChar
@@ -181,8 +139,6 @@ function matchPattern(text, pat) {
                 return false;
             }
 
-
-            // Match one or more occurrences
             while (
                 textIndex < text.length &&
                 text[textIndex] === currentChar
@@ -192,21 +148,13 @@ function matchPattern(text, pat) {
             }
 
 
-            // Move past character and +
             patternIndex += 2;
         }
     }
 
-
-    // Pattern must cover
-    // the complete input string
     return textIndex === text.length;
 }
 
-
-// =========================
-// Clear Fields
-// =========================
 
 function clearFields() {
 
